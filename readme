@@ -1,0 +1,39 @@
+This is a simple c program for the project 1, COP5570.
+The myshell.cpp will realize the simple functions in bash shell.
+
+
+You should type "make" to compile the .cpp files to get the execute files of myshell and myls.
+You can type "make clean" to clean up the files.
+
+*****myshell*****
+If you type the ./myshell to run the shell program. 
+1. Build-in commands:
+a. mycd <path_name>--change your path to a nwe path, like: cd ..
+b. mypwd--show your local dictionary path name
+c. myexit--exit my shell
+d. mytree [dir]--show the path in a tree-like format, like mytree .
+e. mytime cmd[arguments]--like mytime sleep 10
+f. mymtimes [dir]--like mymtimes 
+g. mytimeout snds cmd[cmd-args]--like mytimeout 2 sleep 10
+
+P.S: you can terminate the shell forcely by EOF(control+D)
+
+2.external commands:
+you can execute external commands like: cat,env,sleep and so on
+
+3. redirect command:
+input redirect: like cat<myls.c
+output redirecr like ls>ls_result
+input and output redirect like: cat<test>test2
+
+4.pipe command:
+my shell only support 2 or 3 commands in pipe.
+for 2 commands: ps -ef|more
+for 3 commands: cat myls.c| head -5 | tail 2
+
+
+
+Disadvantage/Limitations:
+1.pipe only support at most 3 commands in each time.
+2.pipe and redirect only support the external command, it doesn't support mytree, mytimes and so on the build in function.
+P.S. : in most case, function of pipe is fine, but sometime it will occur error. When it happens, please restart the shell.  
